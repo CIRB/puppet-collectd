@@ -54,5 +54,9 @@ define collectd::conf($value, $ensure = present, $quote = '') {
           value   => $value
       }
     }
+    default: {
+      fail("Unknown ${quote_real}")
+    }
+
   }
 }

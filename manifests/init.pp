@@ -64,7 +64,11 @@ class collectd {
       case $::debianversion {
         'etch': {
         }
+      default: {
+          fail('Unknown debian version')
+        }
       }
+
     }
     'redhat': {
       file {
