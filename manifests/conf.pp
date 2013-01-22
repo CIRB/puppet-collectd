@@ -37,21 +37,19 @@ define collectd::conf($value, $ensure = present, $quote = '') {
 
   case $quote_real {
     true, yes: {
-      collectd_conf {
-        $name:
-          ensure  => $ensure,
-          require => Package['collectd'],
-          notify  => Service['collectd'],
-          value   => regsubst($value, '^(.*)$', '"\1"', 'G')
+      collectd_conf {$name:
+        ensure  => $ensure,
+        require => Package['collectd'],
+        notify  => Service['collectd'],
+        value   => regsubst($value, '^(.*)$', '"\1"', 'G')
       }
     }
     false, no: {
-      collectd_conf {
-        $name:
-          ensure  => $ensure,
-          require => Package['collectd'],
-          notify  => Service['collectd'],
-          value   => $value
+      collectd_conf {$name:
+        ensure  => $ensure,
+        require => Package['collectd'],
+        notify  => Service['collectd'],
+        value   => $value
       }
     }
     default: {
