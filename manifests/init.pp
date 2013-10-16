@@ -55,7 +55,8 @@ class collectd {
   }
 
   collectd::conf {'Include':
-    value => '/var/lib/puppet/modules/collectd/plugins/*.conf';
+    value   => '/var/lib/puppet/modules/collectd/plugins/*.conf',
+    require => Collectd::Conf['LoadPlugin']
   }
 
   # add customisations for distributions here
