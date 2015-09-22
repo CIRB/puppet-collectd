@@ -1,5 +1,5 @@
 # collectd/manifests/rrdtool.pp
-# (C) Copyright: 2009, François Deppierraz <francois.deppierraz@camptocamp.com>
+# (C) Copyright: 2009, Francois Deppierraz <francois.deppierraz@camptocamp.com>
 
 # Define: collectd::rrdtool.
 # manage the rrdtool plugin's parameters
