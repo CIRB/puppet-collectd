@@ -7,7 +7,7 @@ define collectd::libdir() {
       source   => 'puppet:///modules/collectd/empty', # recurse+purge needs empty directory as source
       mode     => '0644',
       checksum => mtime,
-      ignore   => '.ignore', # ignore the placeholder
+      ignore   => ['.ignore'], # ignore the placeholder
       recurse  => true,
       purge    => true,
       force    => true;

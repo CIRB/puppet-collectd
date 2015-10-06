@@ -37,7 +37,7 @@ class collectd {
     require    => Package['collectd'];
   }
 
-  file {'/etc/collectd/':
+  file {'/etc/collectd':
     ensure  => 'directory',
     mode    => '0755',
     owner   => root,
@@ -50,7 +50,7 @@ class collectd {
     mode    => '0644',
     owner   => root,
     group   => 0,
-    require => [Package['collectd'], File['/etc/collectd/']],
+    require => [Package['collectd'], File['/etc/collectd']],
     notify  => Service['collectd'];
   }
 
