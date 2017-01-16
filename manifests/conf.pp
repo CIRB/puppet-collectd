@@ -33,6 +33,10 @@ define collectd::conf($value, $ensure = present, $quote = '') {
     true, false, yes, no: {
       $quote_real = $quote
     }
+    default: {
+      fail("Unknown collectd.conf directive: ${name}")
+    }
+
   }
 
   case $quote_real {
